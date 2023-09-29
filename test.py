@@ -21,4 +21,4 @@ doc = nlp('Hello world!')
 row_list=[]
 for token in doc:
     row_list.append([token.text])
-np.array(row_list).tofile('spacytest.csv',se=',')
+np.array(row_list).tofile('spacytest.csv',sep=',')
