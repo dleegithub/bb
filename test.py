@@ -12,15 +12,13 @@
 # data = [[1, 2],[3, 4]]
 # x_data = torch.tensor(data)
 # print(x_data)
+import numpy
+arr = np.array([[1,1],[2,2]])
+arr.tofile('nptest.csv', sep = ',')
 from spacy.lang.en import English
 nlp = English()
 doc = nlp('Hello world!')
 row_list=[]
 for token in doc:
     row_list.append([token.text])
-print(row_list)
-import csv
-
-with open('spacytest.csv', 'w', newline='') as file:
-     writer = csv.writer(file)
-     writer.writerows(row_list)
+np.array(row_list).tofile('spacytest.csv',se=',')
